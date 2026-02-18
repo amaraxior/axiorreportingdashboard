@@ -1,0 +1,171 @@
+{
+  "pageTitle": "Features & Roadmap",
+  "pageDescription": "Track the progress of Axior's platform capabilities towards production readiness",
+  "lastUpdated": "2026-02-16",
+  "features": [
+    {
+      "id": 1,
+      "name": "Spec & System Generation from Third-Party Codebases",
+      "shortName": "Codebase-to-Spec",
+      "description": "Ability to generate axior based specs and systems from third party codebase/existing systems",
+      "category": "generation",
+      "status": "in-progress",
+      "completion": 60,
+      "statusItems": [
+        "Currently able to generate specs and systems with around 45% enterprise readiness in Next.js, Python (FastAPI, Django), React/Angular",
+        "Ready for SDK/MCP consumption and tested with Lovable, Claude Code, REST APIs",
+        "Yet to be ready for scale"
+      ],
+      "tags": ["specs", "generation", "nextjs", "python", "react", "angular"],
+      "priority": "high",
+      "icon": "FileCode"
+    },
+    {
+      "id": 2,
+      "name": "Axior Marketplace",
+      "shortName": "Marketplace",
+      "description": "Marketplace for sharing and discovering axior-based specs, systems, and components",
+      "category": "marketplace",
+      "status": "in-progress",
+      "completion": 10,
+      "statusItems": [
+        "Currently working on initial architecture for axior marketplace"
+      ],
+      "tags": ["marketplace", "sharing", "discovery"],
+      "priority": "medium",
+      "icon": "Store"
+    },
+    {
+      "id": 3,
+      "name": "Smart Routing",
+      "shortName": "Smart Routing",
+      "description": "Intelligent routing engine for directing requests and workflows across axior systems",
+      "category": "routing",
+      "status": "in-progress",
+      "completion": 10,
+      "statusItems": ["Currently working on intelligent routing engine for directing requests and workflows across axior systems"],
+      "tags": ["routing", "orchestration"],
+      "priority": "medium",
+      "icon": "GitBranch"
+    },
+    {
+      "id": 4,
+      "name": "Axior Registry",
+      "shortName": "Registry",
+      "description": "Central registry for managing and versioning axior specs, components, and system definitions",
+      "category": "registry",
+      "status": "in-progress",
+      "completion": 5,
+      "statusItems": ["Currently working on docker like registry for axior specs and systems with versioning and management capabilities"],
+      "tags": ["registry", "versioning", "management"],
+      "priority": "medium",
+      "icon": "Database"
+    },
+    {
+      "id": 5,
+      "name": "System Generation from DSL Specs",
+      "shortName": "DSL-to-System",
+      "description": "Generate axior systems from DSL Specs across stacks: Frontend (React, Angular), Backend (Python, Go, Java), Cloud (AWS, Azure, GCP), On-prem (Docker + K8S)",
+      "category": "generation",
+      "status": "in-progress",
+      "completion": 48,
+      "statusItems": [
+        "Currently working on optimization of systems generation as well as adding AI and database support",
+        "Ready for SDK/MCP consumption",
+        "Ready for serving at prod scale"
+      ],
+      "tags": ["DSL", "react", "angular", "python", "golang", "java", "aws", "azure", "gcp", "docker", "k8s"],
+      "priority": "critical",
+      "icon": "Layers"
+    },
+    {
+      "id": 6,
+      "name": "Smart Prompt + Context Engineering",
+      "shortName": "Context Engine",
+      "description": "Advanced context handling to provide more detailed understanding of input requirements for system generation",
+      "category": "context",
+      "status": "in-progress",
+      "completion": 70,
+      "statusItems": [
+        "Improving context handling to provide more detailed understanding of input requirements"
+      ],
+      "tags": ["prompt", "context", "NLP", "requirements"],
+      "priority": "high",
+      "icon": "Brain"
+    },
+    {
+      "id": 7,
+      "name": "Multi-modal Context Handling",
+      "shortName": "Multi-modal",
+      "description": "Ability to handle text, images, audio, and video based understanding of input context",
+      "category": "context",
+      "status": "in-progress",
+      "completion": 20,
+      "statusItems": [
+        "Ability to handle text, images, audio, video based understanding of input context"
+      ],
+      "tags": ["multimodal", "text", "images", "audio", "video"],
+      "priority": "medium",
+      "icon": "Eye"
+    },
+    {
+      "id": 8,
+      "name": "Enterprise Readiness Grading (Axior Specs)",
+      "shortName": "Spec Grading",
+      "description": "Ability to grade axior based specs and systems by virtue of enterprise readiness",
+      "category": "grading",
+      "status": "in-progress",
+      "completion": 56,
+      "statusItems": [
+        "Working on an AI knowledgebase and virtual environment based reinforcement learning grading of generated specs and systems for optimal process gains and enterprise compatibility"
+      ],
+      "tags": ["grading", "enterprise", "RL", "AI", "quality"],
+      "priority": "high",
+      "icon": "Award"
+    },
+    {
+      "id": 9,
+      "name": "Enterprise Readiness Grading (Third-Party Systems)",
+      "shortName": "System Grading",
+      "description": "Ability to grade third party systems/codebase by virtue of enterprise readiness",
+      "category": "grading",
+      "status": "in-progress",
+      "completion": 40,
+      "statusItems": [
+        "Working on an AI knowledgebase and virtual environment based reinforcement learning grading of generated specs and systems for optimal process gains and enterprise compatibility"
+      ],
+      "tags": ["grading", "third-party", "enterprise", "RL", "AI"],
+      "priority": "high",
+      "icon": "ShieldCheck"
+    },
+    {
+      "id": 10,
+      "name": "AI/Agentic Graph Database",
+      "shortName": "Graph DB",
+      "description": "AI/Agentic graph database for quick and contextual retrieval of tools/information entities for performing operations pertaining to a system or a DSL specification",
+      "category": "infrastructure",
+      "status": "not-started",
+      "completion": 0,
+      "statusItems": [],
+      "tags": ["graph", "database", "agentic", "AI", "retrieval"],
+      "priority": "medium",
+      "icon": "Network"
+    },
+    {
+      "id": 11,
+      "name": "Spec Generation from Existing Systems (v2)",
+      "shortName": "Codebase-to-Spec v2",
+      "description": "Enhanced ability to generate axior based specs and systems from third party codebase with AI-powered grading and improved context",
+      "category": "generation",
+      "status": "in-progress",
+      "completion": 30,
+      "statusItems": [
+        "Working on an AI knowledgebase and virtual environment based reinforcement learning grading of generated specs and systems for optimal process gains and enterprise compatibility",
+        "Working on improving context handling"
+      ],
+      "tags": ["specs", "generation", "RL", "context", "v2"],
+      "priority": "high",
+      "icon": "RefreshCw"
+    }
+  ]
+}
