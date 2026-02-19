@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Poppins, Manrope } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
@@ -16,13 +15,6 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "Axior - Features & Roadmap",
-  description:
-    "Track the progress of Axior platform capabilities towards production readiness.",
-  icons: { icon: "/axiorlogo.svg" },
-};
 
 export default function RootLayout({
   children,
