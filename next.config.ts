@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages deployment
-  // basePath: process.env.NODE_ENV === 'production' ? '' : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  // For GitHub Pages deployment to repository path
+  basePath: "/axiorreportingdashboard",
+  assetPrefix: "/axiorreportingdashboard/",
 };
 
 export default nextConfig;
