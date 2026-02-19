@@ -1,15 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { clerkMiddleware } from '@clerk/nextjs/server'
 
-const isPublicRoute = createRouteMatcher([
-  '/sign-in(.*)',
-  '/sign-up(.*)',
-])
-
-export default clerkMiddleware(async (auth, req) => {
-  if (!isPublicRoute(req)) {
-    await auth.protect()
-  }
-})
+// Use Clerk middleware in non-blocking mode.
+// Auth state is attached to the request for client-side
+// SignedIn/SignedOut components to use, but unauthenticated
+// requests are NOT blocked at the server level.
+export default clerkMiddleware()
 
 export const config = {
   matcher: [
