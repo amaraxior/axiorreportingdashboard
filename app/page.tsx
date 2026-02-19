@@ -93,6 +93,31 @@ export default function DashboardPage() {
         </div>
       </header>
 
+      {/* Auth Gate - Show sign-in prompt for unauthenticated users */}
+      <SignedOut>
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-6">
+          <div className="text-center max-w-md">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--primary)]/10 mb-6">
+              <Map className="w-8 h-8 text-[var(--primary)]" />
+            </div>
+            <h1 className="text-2xl md:text-3xl font-semibold text-[var(--foreground)] mb-3 tracking-tight">
+              Features &amp; Roadmap
+            </h1>
+            <p className="text-[var(--muted-foreground)] mb-8 text-sm">
+              Sign in to view the Axior platform development roadmap and feature progress.
+            </p>
+            <SignInButton mode="modal">
+              <button className="px-6 py-3 text-sm font-medium text-[var(--primary-foreground)] bg-[var(--primary)] rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-[var(--primary)]/20">
+                Sign In to Continue
+              </button>
+            </SignInButton>
+          </div>
+        </div>
+      </SignedOut>
+
+      {/* Dashboard content - only visible when signed in */}
+      <SignedIn>
+
       <main className="max-w-7xl mx-auto px-6 py-10 md:py-14">
         {/* Hero */}
         <div className="text-center mb-10 animate-fade-in">
@@ -209,9 +234,10 @@ export default function DashboardPage() {
             Completion percentages reflect progress towards production
             acceptance. */}
           </p>
-         
+
         </footer>
       </main>
+      </SignedIn>
     </div>
   );
 }
