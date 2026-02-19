@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages deployment to repository path
-  basePath: "/axiorreportingdashboard",
-  assetPrefix: "/axiorreportingdashboard/",
 };
 
 export default nextConfig;
