@@ -106,10 +106,10 @@ Write-Host "📊 You can monitor the deployment at:" -ForegroundColor Cyan
 Write-Host "  https://console.aws.amazon.com/amplify/home?region=$($env:AWS_REGION)#/$AppId/$Branch/$JobId"
 Write-Host ""
 Write-Host "🌐 Your app will be available at:" -ForegroundColor Cyan
-Write-Host "  https://$Branch.$AppId.amplifyapp.com"
+Write-Host "  https://$($Branch).$($AppId).amplifyapp.com"
 Write-Host "  https://$CustomDomain (after DNS configuration)"
 Write-Host ""
 Write-Host "📝 DNS Configuration Required:" -ForegroundColor Yellow
 Write-Host "  Add this Route53 CNAME record:"
 Write-Host "  Name: $CustomDomain"
-Write-Host "  Value: $Branch.$AppId.amplifyapp.com"
+Write-Host "  Value: $($Branch).$($AppId).amplifyapp.com"

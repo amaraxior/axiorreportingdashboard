@@ -1,0 +1,59 @@
+name: Deploy to AWS Amplify
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AWS_REGION: us-east-1
+  NODE_VERSION: '20'
+
+jobs:
+  deploy:
+    name: Deploy to AWS Lambda
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js app
+        run: npm run build
+        env:
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+
+      - name: Deploy to AWS Amplify
+        run: npm run deploy:aws
+        env:
+          # AWS Credentials
+          ADMIN_CLI_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          ADMIN_CLI_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+
+          # Clerk Credentials
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+
+          # Amplify Configuration
+          AMPLIFY_APP_NAME: axiorreporting-dashboard
+          REPOSITORY_URL: ${{ github.server_url }}/${{ github.repository }}
+          BRANCH: main
+          CUSTOM_DOMAIN: axiorreporting.axior.dev
+
+      - name: Output deployment URLs
+        run: |
+          echo "🌐 Dashboard deployed successfully!"
+          echo "📊 Monitor deployment in AWS Console:"
+          echo "   https://console.aws.amazon.com/amplify/home?region=${{ env.AWS_REGION }}"

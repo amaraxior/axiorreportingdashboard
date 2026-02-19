@@ -7,7 +7,8 @@
     "build": "next build",
     "export": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy:aws": "tsx scripts/deploy.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.8.2",
@@ -21,12 +22,15 @@
     "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
+    "@aws-sdk/client-amplify": "^3.709.0",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
+    "dotenv": "^16.4.7",
     "postcss": "^8.5.0",
     "tailwindcss": "^4.0.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.0"
   }
 }

@@ -20,14 +20,32 @@ A modern, real-time dashboard for tracking Axior platform feature development pr
 
 ## 🚀 Quick Deploy
 
-### Deploy to AWS (Lambda + SSR + Auth)
+### Automated CI/CD (Recommended)
+
+Every push to `main` automatically deploys to AWS:
+
+```bash
+git add .
+git commit -m "Update features"
+git push
+```
+
+GitHub Actions handles the rest! See [GitHub Actions Setup Guide](./GITHUB_ACTIONS_SETUP.md)
+
+### Manual Deploy to AWS (Lambda + SSR + Auth)
+
+```bash
+npm run deploy:aws           # TypeScript deployment script
+```
+
+Or use the shell scripts:
 
 ```bash
 .\deploy-aws.ps1              # Windows
 ./deploy-aws.sh               # macOS/Linux
 ```
 
-### Update Content
+### Update Content Only
 
 ```bash
 .\deploy.ps1 "Update message"  # Windows
