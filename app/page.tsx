@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import {
   Map,
@@ -68,9 +69,27 @@ export default function DashboardPage() {
               className="h-7 w-auto opacity-90"
             />
           </div>
-          <span className="text-xs text-[var(--muted-foreground)]/60 hidden sm:block">
-            Project Dashboard
-          </span>
+          <div className="flex items-center gap-4">
+            <span className="text-xs text-[var(--muted-foreground)]/60 hidden sm:block">
+              Project Dashboard
+            </span>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="px-4 py-2 text-sm font-medium text-[var(--primary-foreground)] bg-[var(--primary)] rounded-lg hover:opacity-90 transition-opacity">
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton
+                appearance={{
+                  elements: {
+                    avatarBox: "w-9 h-9",
+                  },
+                }}
+              />
+            </SignedIn>
+          </div>
         </div>
       </header>
 
