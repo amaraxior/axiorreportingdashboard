@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // SSR enabled for Lambda deployment
+  // Standalone output for Docker/Fargate deployment
+  output: 'standalone',
+
   images: {
     unoptimized: true,
   },
